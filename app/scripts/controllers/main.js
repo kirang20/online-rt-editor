@@ -9,6 +9,41 @@
  */
 angular.module('editorDemoApp')
   .controller('MainCtrl', function ($scope) {
+    $scope.customers = ['Aspen', 'WKLI', 'OUP'];
+
+    $scope.chapters = [
+        {
+            'customer' : 'Aspen',
+            'title' : 'Aspen Book 1 - Chapter 1',
+            'author' : 'Aspen Author 1',
+            'summary' : 'Aspen Book 1 - Chapter 1 Summary',
+            'Contents': 'This is the content of Aspen Book 1 - Chapter 1'
+        },
+        {
+            'customer' : 'WKLI',
+            'title' : 'WKLI Book 1 - Chapter 1',
+            'author' : 'WKLI Author 1',
+            'summary' : 'WKLI Book 1 - Chapter 1 Summary',
+            'Contents': 'This is the content of WKLI Book 1 - Chapter 1'
+        },
+        {
+            'customer' : 'OUP',
+            'title' : 'OUP Book 1 - Chapter 1',
+            'author' : 'OUP Author 1',
+            'summary' : 'OUP Book 1 - Chapter 1 Summary',
+            'Contents': 'This is the content of OUP Book 1 - Chapter 1'
+        }
+    ];
+
+    $scope.updateChapters = function(customer) {
+        $scope.filteredChapters = $scope.chapters.filter(function(chapter){
+            return chapter.customer == customer;
+        });
+    };
+
+    $scope.selectedCustomer = 'Aspen';
+    $scope.updateChapters($scope.selectedCustomer);
+
     $scope.editorOptions = {
         language: 'en',
         toolbar: [

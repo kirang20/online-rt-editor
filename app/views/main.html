@@ -1,19 +1,19 @@
-<!-- Content -->
 <div class="container" ng-controller="MainCtrl">
     <div class="row">
         <div class="col-sm-1 vertical-pane">
             <ul class="nav nav-stacked affix">
-                <li><span class="btn btn-link btn-lg">WKLI</span></li>
-                <li><span class="btn btn-link btn-lg">Aspen</span></li>
-                <li><span class="btn btn-link btn-lg">OUP</span></li>
+
+                <li ng-repeat="customer in customers" ng-click="updateChapters(customer)">
+                    <span class="btn btn-link btn-lg">
+                        {{customer}}</span>
+                </li>
             </ul>
         </div>
         <div class="col-sm-2 well vertical-pane">
             <div>
-                <div class="well">Book 1 - Chapter 1</div>
-                <div class="well">Book 1 - Chapter 2</div>
-                <div class="well">Book 2 - Chapter 1</div>
-                <div class="well">Book 2 - Chapter 2</div>
+                <div class="well" ng-repeat="chapter in filteredChapters">
+                    {{chapter.title}}
+                </div>
             </div>
         </div>
         <div class="col-sm-8 vertical-pane">
@@ -21,118 +21,3 @@
         </div>
     </div>
 </div>
-
-
-<!--<div class="container-fluid">-->
-<!--<div class="row" ng-controller="MainCtrl">-->
-<!--<div class="col-md-2">-->
-<!--<div class="row">Customer1</div>-->
-<!--<div class="row">Customer2</div>-->
-<!--<div class="row">Customer3</div>-->
-<!--</div>-->
-<!--<div class="col-md-3">-->
-<!--<div class="row">Chapter1</div>-->
-<!--<div class="row">Chapter2</div>-->
-<!--<div class="row">Chapter3</div>-->
-<!--</div>-->
-<!--<div class="col-md-7">-->
-<!--<div class="row">Content1</div>-->
-<!--<div class="row">Content2</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--<div class="row">Content3</div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
