@@ -1,15 +1,14 @@
 <!-- Content -->
-<div class="container">
+<div class="container" ng-controller="MainCtrl">
     <div class="row">
-        <div class="col-sm-2">
+        <div class="col-sm-1 vertical-pane">
             <ul class="nav nav-stacked affix">
-                <li><a href="#">Customer 1</a></li>
-                <li><a href="#">Customer 2</a></li>
-                <li><a href="#">Customer 3</a></li>
-                <li><a href="#">Customer 4</a></li>
+                <li><span class="btn btn-link btn-lg">WKLI</span></li>
+                <li><span class="btn btn-link btn-lg">Aspen</span></li>
+                <li><span class="btn btn-link btn-lg">OUP</span></li>
             </ul>
         </div>
-        <div class="col-sm-3 well">
+        <div class="col-sm-2 well vertical-pane">
             <div>
                 <div class="well">Book 1 - Chapter 1</div>
                 <div class="well">Book 1 - Chapter 2</div>
@@ -17,8 +16,8 @@
                 <div class="well">Book 2 - Chapter 2</div>
             </div>
         </div>
-        <div class="col-sm-7">
-
+        <div class="col-sm-8 vertical-pane">
+            <textarea ckeditor="editorOptions" ng-model="modelName"></textarea>
         </div>
     </div>
 </div>
