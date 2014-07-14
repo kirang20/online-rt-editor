@@ -18,7 +18,7 @@
                 <li ng-class="customer.state"
                     ng-repeat="customer in customers"
                     ng-click="customerSelected(customer)">
-                    <a> {{customer.name}}</a>
+                    <a>{{customer.name}}</a>
                 </li>
             </ul>
         </div>
@@ -27,7 +27,11 @@
                 <li ng-class="chapter.state"
                     ng-repeat="chapter in filteredChapters"
                     ng-click="chapterSelected(chapter)">
-                    <a>{{chapter.title}}</a>
+                    <a>
+                        <div><strong>{{chapter.title}}</strong></div>
+                        <div>{{chapter.summary}}</div>
+                        <div class="text-muted">Last modified: {{chapter.lastModified}}</div>
+                    </a>
                 </li>
             </ul>
         </div>

@@ -133,6 +133,20 @@ body {
   background-color: #428bca;
 }
 
+.chapters {
+  margin-left:12% !important;
+  margin-right:17px;
+  top: -14px;
+  left: 17px;
+  z-index: 1000;
+  display: block;
+  padding: 10px 0px 10px 0;
+  overflow-x: hidden;
+  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
+  background-color: #dff0d8;
+  border-right: 1px solid #eee;
+}
+
 .nav-chapters {
   margin-bottom: 20px;
 }
@@ -146,19 +160,6 @@ body {
 .nav-chapters > .active > a:focus {
   color: #fff;
   background-color: #428bca;
-}
-
-.chapters {
-  margin-left:12% !important;
-  top: -14px;
-  left: 17px;
-  z-index: 1000;
-  display: block;
-  padding: 10px 10px 10px 0;
-  overflow-x: hidden;
-  overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  background-color: #BEE4C0;
-  border-right: 1px solid #eee;
 }
 
 .editor {
