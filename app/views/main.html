@@ -11,13 +11,15 @@
         </div>
         <div class="col-sm-2 well vertical-pane">
             <div>
-                <div class="well" ng-repeat="chapter in filteredChapters">
+                <div class="well" ng-repeat="chapter in filteredChapters"
+                     ng-click="updateChapterContents(chapter)">
                     {{chapter.title}}
                 </div>
             </div>
         </div>
         <div class="col-sm-8 vertical-pane">
-            <textarea ckeditor="editorOptions" ng-model="modelName"></textarea>
+            <span class="btn btn-link btn-lg" ng-click="saveChapter()">Save</span>
+            <textarea ckeditor="editorOptions" ng-model="selectedChapterContents"></textarea>
         </div>
     </div>
 </div>

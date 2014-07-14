@@ -10,21 +10,21 @@ angular.module('editorDemoApp')
             'title' : 'Aspen Book 1 - Chapter 1',
             'author' : 'Aspen Author 1',
             'summary' : 'Aspen Book 1 - Chapter 1 Summary',
-            'Contents': 'This is the content of Aspen Book 1 - Chapter 1'
+            'contents': 'This is the content of Aspen Book 1 - Chapter 1'
         },
         {
             'customer' : 'WKLI',
             'title' : 'WKLI Book 1 - Chapter 1',
             'author' : 'WKLI Author 1',
             'summary' : 'WKLI Book 1 - Chapter 1 Summary',
-            'Contents': 'This is the content of WKLI Book 1 - Chapter 1'
+            'contents': 'This is the content of WKLI Book 1 - Chapter 1'
         },
         {
             'customer' : 'OUP',
             'title' : 'OUP Book 1 - Chapter 1',
             'author' : 'OUP Author 1',
             'summary' : 'OUP Book 1 - Chapter 1 Summary',
-            'Contents': 'This is the content of OUP Book 1 - Chapter 1'
+            'contents': 'This is the content of OUP Book 1 - Chapter 1'
         }
     ];
 
@@ -32,6 +32,17 @@ angular.module('editorDemoApp')
         $scope.filteredChapters = $scope.chapters.filter(function(chapter){
             return chapter.customer === customer;
         });
+        $scope.selectedChapter = $scope.filteredChapters[0];
+        $scope.selectedChapterContents = $scope.filteredChapters[0].contents;
+    };
+
+    $scope.updateChapterContents = function(chapter) {
+        $scope.selectedChapter = chapter;
+        $scope.selectedChapterContents = chapter.contents;
+    };
+
+    $scope.saveChapter = function() {
+        $scope.selectedChapter.contents = $scope.selectedChapterContents;
     };
 
     $scope.selectedCustomer = 'Aspen';
