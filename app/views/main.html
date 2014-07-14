@@ -2,7 +2,6 @@
     <div class="row">
         <div class="col-sm-1 vertical-pane">
             <ul class="nav nav-stacked affix">
-
                 <li ng-repeat="customer in customers" ng-click="updateChapters(customer)">
                     <span class="btn btn-link btn-lg">
                         {{customer}}</span>
@@ -10,11 +9,9 @@
             </ul>
         </div>
         <div class="col-sm-2 well vertical-pane">
-            <div>
-                <div class="well" ng-repeat="chapter in filteredChapters"
-                     ng-click="updateChapterContents(chapter)">
-                    {{chapter.title}}
-                </div>
+            <div class="well" ng-repeat="chapter in filteredChapters"
+                 ng-click="updateChapterContents(chapter)">
+                {{chapter.title}}
             </div>
         </div>
         <div class="col-sm-8 vertical-pane">
