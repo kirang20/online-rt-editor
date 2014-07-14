@@ -1,22 +1,37 @@
-<div class="container" ng-controller="MainCtrl">
+<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Online Editor</a>
+        </div>
+    </div>
+</div>
+<div class="container-fluid" ng-controller="MainCtrl">
     <div class="row">
-        <div class="col-sm-1 vertical-pane">
-            <ul class="nav nav-stacked affix">
+        <div class="col-sm-1 sidebar">
+            <ul class="nav nav-sidebar">
                 <li ng-repeat="customer in customers" ng-click="updateChapters(customer)">
-                    <span class="btn btn-link btn-lg">
-                        {{customer}}</span>
+                    <a> {{customer}}</a>
                 </li>
             </ul>
         </div>
-        <div class="col-sm-2 well vertical-pane">
-            <div class="well" ng-repeat="chapter in filteredChapters"
-                 ng-click="updateChapterContents(chapter)">
-                {{chapter.title}}
-            </div>
+        <div class="col-sm-3 main chapters">
+            <ul class="nav nav-chapters">
+                <li ng-repeat="chapter in filteredChapters"
+                    ng-click="updateChapterContents(chapter)">
+                    <a>{{chapter.title}}</a>
+                </li>
+            </ul>
         </div>
-        <div class="col-sm-8 vertical-pane">
-            <span class="btn btn-link btn-lg" ng-click="saveChapter()">Save</span>
+        <div class="col-sm-8 editor">
             <textarea ckeditor="editorOptions" ng-model="selectedChapterContents"></textarea>
+            <span class="btn btn-default btn-primary save-button" ng-click="saveChapter()">Save</span>
         </div>
     </div>
+</div>
 </div>
