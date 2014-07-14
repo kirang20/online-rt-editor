@@ -370,7 +370,7 @@ module.exports = function (grunt) {
     //Deployment
     buildcontrol: {
         options: {
-          dir: 'app',
+          dir: 'dist',
           commit: true,
           push: true,
           message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
