@@ -54,7 +54,7 @@ angular.module('editorDemoApp')
             { 'name': 'tools', 'items': [ 'Maximize', 'ShowBlocks' ] },
             { 'name': 'others', 'items': [ '-' ] },
             { 'name': 'about', 'items': [ 'About' ] }
-                 ],
+        ],
         'toolbarGroups' : [
             { 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] },
             { 'name': 'clipboard', 'groups': [ 'clipboard', 'undo' ] },
@@ -71,6 +71,6 @@ angular.module('editorDemoApp')
             { 'name': 'tools' },
             { 'name': 'others' },
             { 'name': 'about' }
-                        ]
+        ]
     };
   });

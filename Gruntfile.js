@@ -316,6 +316,16 @@ module.exports = function (grunt) {
           ]
         }, {
           expand: true,
+          cwd: 'bower_components/ckeditor',
+          dest: '<%= yeoman.dist %>',
+          src: ['*.js', 'lang/en.js', 'contents.css', 'skins/moono']
+        }, {
+          expand: true,
+          cwd: 'bower_components/ng-ckeditor',
+          dest: '<%= yeoman.dist %>',
+          src: ['ng-ckeditor.css']
+        }, {
+          expand: true,
           cwd: '.tmp/images',
           dest: '<%= yeoman.dist %>/images',
           src: ['generated/*']
