@@ -2,7 +2,7 @@
 
 angular.module('editorDemoApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.customers = ['Aspen', 'WKLI', 'OUP'];
+    $scope.customers = [{name:'Aspen'}, {name:'WKLI'}, {name:'OUP'}];
 
     $scope.chapters = [
         {"customer":"Aspen","title":"Aspen Book 1 - Chapter 1","author":"Aspen Author 1","summary":"Aspen Book 1 - Chapter 1 Summary","contents":"This is the content of Aspen Book 1 - Chapter 1"},{"customer":"Aspen","title":"Aspen Book 2 - Chapter 2","author":"Aspen Author 2","summary":"Aspen Book 2 - Chapter 2 Summary","contents":"This is the content of Aspen Book 2 - Chapter 2"},{"customer":"Aspen","title":"Aspen Book 3 - Chapter 3","author":"Aspen Author 3","summary":"Aspen Book 3 - Chapter 3 Summary","contents":"This is the content of Aspen Book 3 - Chapter 3"},{"customer":"Aspen","title":"Aspen Book 4 - Chapter 4","author":"Aspen Author 4","summary":"Aspen Book 4 - Chapter 4 Summary","contents":"This is the content of Aspen Book 4 - Chapter 4"},{"customer":"Aspen","title":"Aspen Book 5 - Chapter 5","author":"Aspen Author 5","summary":"Aspen Book 5 - Chapter 5 Summary","contents":"This is the content of Aspen Book 5 - Chapter 5"},{"customer":"Aspen","title":"Aspen Book 6 - Chapter 6","author":"Aspen Author 6","summary":"Aspen Book 6 - Chapter 6 Summary","contents":"This is the content of Aspen Book 6 - Chapter 6"},{"customer":"Aspen","title":"Aspen Book 7 - Chapter 7","author":"Aspen Author 7","summary":"Aspen Book 7 - Chapter 7 Summary","contents":"This is the content of Aspen Book 7 - Chapter 7"},{"customer":"Aspen","title":"Aspen Book 8 - Chapter 8","author":"Aspen Author 8","summary":"Aspen Book 8 - Chapter 8 Summary","contents":"This is the content of Aspen Book 8 - Chapter 8"},{"customer":"Aspen","title":"Aspen Book 9 - Chapter 9","author":"Aspen Author 9","summary":"Aspen Book 9 - Chapter 9 Summary","contents":"This is the content of Aspen Book 9 - Chapter 9"},{"customer":"Aspen","title":"Aspen Book 10 - Chapter 10","author":"Aspen Author 10","summary":"Aspen Book 10 - Chapter 10 Summary","contents":"This is the content of Aspen Book 10 - Chapter 10"},
@@ -10,25 +10,35 @@ angular.module('editorDemoApp')
         {"customer":"OUP","title":"OUP Book 1 - Chapter 1","author":"OUP Author 1","summary":"OUP Book 1 - Chapter 1 Summary","contents":"This is the content of OUP Book 1 - Chapter 1"},{"customer":"OUP","title":"OUP Book 2 - Chapter 2","author":"OUP Author 2","summary":"OUP Book 2 - Chapter 2 Summary","contents":"This is the content of OUP Book 2 - Chapter 2"},{"customer":"OUP","title":"OUP Book 3 - Chapter 3","author":"OUP Author 3","summary":"OUP Book 3 - Chapter 3 Summary","contents":"This is the content of OUP Book 3 - Chapter 3"},{"customer":"OUP","title":"OUP Book 4 - Chapter 4","author":"OUP Author 4","summary":"OUP Book 4 - Chapter 4 Summary","contents":"This is the content of OUP Book 4 - Chapter 4"},{"customer":"OUP","title":"OUP Book 5 - Chapter 5","author":"OUP Author 5","summary":"OUP Book 5 - Chapter 5 Summary","contents":"This is the content of OUP Book 5 - Chapter 5"},{"customer":"OUP","title":"OUP Book 6 - Chapter 6","author":"OUP Author 6","summary":"OUP Book 6 - Chapter 6 Summary","contents":"This is the content of OUP Book 6 - Chapter 6"},{"customer":"OUP","title":"OUP Book 7 - Chapter 7","author":"OUP Author 7","summary":"OUP Book 7 - Chapter 7 Summary","contents":"This is the content of OUP Book 7 - Chapter 7"},{"customer":"OUP","title":"OUP Book 8 - Chapter 8","author":"OUP Author 8","summary":"OUP Book 8 - Chapter 8 Summary","contents":"This is the content of OUP Book 8 - Chapter 8"},{"customer":"OUP","title":"OUP Book 9 - Chapter 9","author":"OUP Author 9","summary":"OUP Book 9 - Chapter 9 Summary","contents":"This is the content of OUP Book 9 - Chapter 9"},{"customer":"OUP","title":"OUP Book 10 - Chapter 10","author":"OUP Author 10","summary":"OUP Book 10 - Chapter 10 Summary","contents":"This is the content of OUP Book 10 - Chapter 10"}
     ];
 
-    $scope.updateChapters = function(customer) {
+    $scope.customerSelected = function(customer) {
         $scope.filteredChapters = $scope.chapters.filter(function(chapter){
-            return chapter.customer === customer;
+            return chapter.customer === customer.name;
         });
         $scope.selectedChapter = $scope.filteredChapters[0];
         $scope.selectedChapterContents = $scope.filteredChapters[0].contents;
+        $scope.customers.forEach(function(c){
+            c.state = "inActive";
+        });
+        customer.state = "active";
+        $scope.chapterSelected($scope.selectedChapter);
+
     };
 
-    $scope.updateChapterContents = function(chapter) {
+    $scope.chapterSelected = function(chapter) {
         $scope.selectedChapter = chapter;
         $scope.selectedChapterContents = chapter.contents;
+        $scope.chapters.forEach(function(c){
+            c.state="inActive";
+        });
+        chapter.state="active";
     };
 
     $scope.saveChapter = function() {
         $scope.selectedChapter.contents = $scope.selectedChapterContents;
     };
 
-    $scope.selectedCustomer = 'Aspen';
-    $scope.updateChapters($scope.selectedCustomer);
+    $scope.selectedCustomer = $scope.customers[0];
+    $scope.customerSelected($scope.selectedCustomer);
 
     $scope.editorOptions = {
         'language': 'en',

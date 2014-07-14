@@ -13,22 +13,25 @@
 </div>
 <div class="container-fluid" ng-controller="MainCtrl">
     <div class="row">
-        <div class="col-sm-1 sidebar">
+        <div class="col-sm-2 sidebar">
             <ul class="nav nav-sidebar">
-                <li ng-repeat="customer in customers" ng-click="updateChapters(customer)">
-                    <a> {{customer}}</a>
+                <li ng-class="customer.state"
+                    ng-repeat="customer in customers"
+                    ng-click="customerSelected(customer)">
+                    <a> {{customer.name}}</a>
                 </li>
             </ul>
         </div>
-        <div class="col-sm-3 main chapters">
+        <div class="col-sm-3 col-sm-offset-2 main chapters">
             <ul class="nav nav-chapters">
-                <li ng-repeat="chapter in filteredChapters"
-                    ng-click="updateChapterContents(chapter)">
+                <li ng-class="chapter.state"
+                    ng-repeat="chapter in filteredChapters"
+                    ng-click="chapterSelected(chapter)">
                     <a>{{chapter.title}}</a>
                 </li>
             </ul>
         </div>
-        <div class="col-sm-8 editor">
+        <div class="col-sm-7 editor">
             <textarea ckeditor="editorOptions" ng-model="selectedChapterContents"></textarea>
             <span class="btn btn-default btn-primary save-button" ng-click="saveChapter()">Save</span>
         </div>
