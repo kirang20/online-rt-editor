@@ -14,6 +14,7 @@
 <div class="container-fluid" ng-controller="MainCtrl">
     <div class="row">
         <div class="col-sm-2 sidebar">
+            <h4 class="text-center">Customers</h4>
             <ul class="nav nav-sidebar">
                 <li ng-class="customer.state"
                     ng-repeat="customer in customers"
@@ -23,6 +24,7 @@
             </ul>
         </div>
         <div class="col-sm-3 col-sm-offset-2 main chapters">
+            <h4 class="text-center">Documents</h4>
             <ul class="nav nav-chapters">
                 <li ng-class="chapter.state"
                     ng-repeat="chapter in filteredChapters"
