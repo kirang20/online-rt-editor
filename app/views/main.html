@@ -38,7 +38,8 @@
         <div class="col-sm-7 editor">
             <h3 class="text-center">{{selectedChapter.title}}</h3>
             <textarea ckeditor="editorOptions" ng-model="selectedChapterContents"></textarea>
-            <span class="btn btn-default btn-primary save-button" ng-click="saveChapter()">Save</span>
+            <span class="btn btn-default btn-primary save-button" ng-show="canChapterBeSaved" ng-click="saveChapter()">Save</span>
+            <span class="btn btn-success btn-disabled save-button" ng-show="!canChapterBeSaved">Saved</span>
         </div>
     </div>
 </div>
