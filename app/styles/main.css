@@ -143,7 +143,7 @@ body {
   padding: 10px 0px 10px 0;
   overflow-x: hidden;
   overflow-y: auto; /* Scrollable contents if viewport is shorter than content. */
-  background-color: #dff0d8;
+  background-color: rgb(232,232,232);
   border-right: 1px solid #eee;
 }
 
@@ -159,6 +159,13 @@ body {
 .nav-chapters > .active > a:hover,
 .nav-chapters > .active > a:focus {
   color: #fff;
+  background-color: #428bca;
+}
+
+.nav-chapters > .active > a > .text-muted,
+.nav-chapters > .active > a:hover > .text-muted,
+.nav-chapters > .active > a:focus > .text-muted {
+  color: #DABEBE;
   background-color: #428bca;
 }
 
