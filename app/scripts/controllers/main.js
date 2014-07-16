@@ -87,12 +87,9 @@ angular.module('editorDemoApp')
                 { 'name': 'basicstyles', 'groups': [ 'basicstyles', 'cleanup' ], 'items': [ 'Bold', 'Italic', 'Underline', 'Strike', 'Subscript', 'Superscript', '-', 'RemoveFormat' ] },
                 { 'name': 'paragraph', 'groups': [ 'list', 'indent', 'blocks', 'align', 'bidi' ], 'items': [ 'NumberedList', 'BulletedList', '-', 'Outdent', 'Indent', '-', '-', 'JustifyLeft', 'JustifyCenter', 'JustifyRight', 'JustifyBlock', '-' ] },
                 { 'name': 'links', 'items': [ 'Link', 'Unlink' ] },
-                { 'name': 'insert', 'items': [ 'Image', 'Table', 'HorizontalRule', 'Smiley', 'SpecialChar', 'PageBreak' ] },
-                '/',
+                { 'name': 'insert', 'items': [ 'Image', 'Table'] },
                 { 'name': 'styles', 'items': [ 'Styles', 'Format', 'Font', 'FontSize' ] },
-                { 'name': 'colors', 'items': [ 'TextColor', 'BGColor' ] },
-                { 'name': 'others', 'items': [ '-' ] },
-                { 'name': 'about', 'items': [ 'About' ] }
+                { 'name': 'colors', 'items': [ 'TextColor', 'BGColor' ] }
             ],
             'toolbarGroups': [
                 { 'name': 'document', 'groups': [ 'mode', 'document', 'doctools' ] },
