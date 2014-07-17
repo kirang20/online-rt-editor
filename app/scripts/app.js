@@ -3,6 +3,7 @@
 angular
     .module('editorDemoApp', [
         'ngRoute',
+        'ngSanitize',
         'ngCkeditor'
     ])
     .config(function ($routeProvider) {
