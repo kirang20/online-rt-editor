@@ -144,7 +144,7 @@ body {
     margin-left: 12% !important;
     margin-right: 17px;
     top: -14px;
-    left: 17px;
+    left: 22px;
     z-index: 1000;
     display: block;
     padding: 10px 0px 10px 0;
@@ -179,6 +179,7 @@ body {
 
 .editor {
     margin-bottom: 10px;
+    left: 5px;
     top: -24px;
     z-index: 1000;
     display: block;
