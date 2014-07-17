@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name editorDemoApp
- * @description
- * # editorDemoApp
- *
- * Main module of the application.
- */
 angular
     .module('editorDemoApp', [
         'ngRoute',
