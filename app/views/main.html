@@ -29,11 +29,11 @@
                     ng-repeat="chapter in filteredChapters"
                     ng-click="chapterSelected(chapter)">
                     <a>
-                        <div class="text-capitalize"><strong>{{chapter.title}}</strong></div>
-                        <div class="text-capitalize" ng-bind-html="chapter.contents.slice(0, 40)"></div>
+                        <strong class="text-capitalize">{{chapter.title}}</strong>
+                        <small class="text-capitalize" ng-bind-html="chapter.contents.slice(0, 100)"></small>
                         <div class="text-muted">
                             <span class="glyphicon glyphicon-time"></span>
-                            <span class="date" ng-bind="chapter.lastModified"></span>
+                            <span class="date">{{chapter.lastModified | date : 'dd MMM yyyy'}}</span>
                         </div>
                     </a>
                 </li>
